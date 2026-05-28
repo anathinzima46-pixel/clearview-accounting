@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ClearView Accounting Services – Professional bookkeeping, tax returns, company registration and financial services in Cape Town and Rustenburg, South Africa.">
+    <meta name="keywords" content="accounting, bookkeeping, tax returns, SARS, company registration, Cape Town, Parklands, Rustenburg, South Africa, ClearView">
+    <title>ClearView Accounting Services | Cape Town &amp; Rustenburg</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy:        #0D1B2A;
+            --navy-mid:    #142035;
+            --navy-rich:   #0A2240;
+            --gold:        #C49A3E;
+            --gold-bright: #D4AA52;
+            --gold-pale:   #EDD87A;
+            --gold-muted:  #8A6B2A;
+            --cream:       #F5F0E8;
+            --cream-dk:    #EDE5D6;
+            --white:       #FFFFFF;
+            --off-white:   #FAFAF7;
+            --text-dark:   #0D1B2A;
+            --text-mid:    #3D5068;
+            --text-light:  #7A8A9A;
+            --border-gold: rgba(196,154,62,0.22);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-dark);
+            background: var(--cream);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ─── HEADER ─────────────────────────────────────── */
+        header {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 1000;
+            background: rgba(13,27,42,0.97);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(196,154,62,0.12);
+            padding: 1rem 0;
+            transition: padding .3s ease, background .3s ease;
+        }
+        header.scrolled { padding: .55rem 0; }
+
+        nav {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 52px;
+            width: auto;
+            display: block;
+            border-radius: 7px;
+        }
+
+        .nav-links { list-style: none; display: flex; align-items: center; gap: 2.5rem; }
+
+        .nav-links a {
+            font-size: .875rem;
+            font-weight: 500;
+            color: rgba(255,255,255,.75);
+            text-decoration: none;
+            letter-spacing: .3px;
+            transition: color .25s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 1.5px;
+            background: var(--gold);
+            transition: width .3s ease;
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--gold) !important;
+            color: var(--navy) !important;
+            padding: .5rem 1.4rem !important;
+            border-radius: 50px;
+            font-weight: 700 !important;
+            transition: background .3s, transform .2s, box-shadow .3s !important;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover {
+            background: var(--gold-bright) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(196,154,62,.35);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: .4rem;
+            z-index: 1002;
+        }
+
+        /* ─── HERO ───────────────────────────────────────── */
+        .hero {
+            min-height: 100vh;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            padding-top: 76px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg-glow {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 65% at 78% 52%, rgba(196,154,62,.07) 0%, transparent 70%),
+                radial-gradient(ellipse 45% 45% at 18% 78%, rgba(12,34,64,.9) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(196,154,62,.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(196,154,62,.035) 1px, transparent 1px);
+            background-size: 64px 64px;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 4rem 2rem 5rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: .55rem;
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.6rem;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 28px; height: 1px;
+            background: var(--gold);
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 5.2vw, 5.2rem);
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.04;
+            margin-bottom: 1.6rem;
+        }
+        .hero h1 em { font-style: italic; color: var(--gold); }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,.6);
+            line-height: 1.8;
+            max-width: 490px;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: .9rem 2.3rem;
+            font-weight: 700;
+            font-size: .9rem;
+            text-decoration: none;
+            border-radius: 50px;
+            letter-spacing: .3px;
+            transition: all .3s;
+            box-shadow: 0 8px 28px rgba(196,154,62,.28);
+            border: none; cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: var(--gold-bright);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 36px rgba(196,154,62,.38);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            border: 1.5px solid rgba(255,255,255,.28);
+            color: #fff;
+            padding: .9rem 2.3rem;
+            font-weight: 500;
+            font-size: .9rem;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .3s;
+        }
+        .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+        /* hero right panel */
+        .hero-right { display: flex; flex-direction: column; gap: 1.4rem; }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(196,154,62,.18);
+            border-radius: 12px;
+            padding: 1.5rem;
+            backdrop-filter: blur(8px);
+            transition: all .3s;
+        }
+        .stat-card:hover {
+            background: rgba(255,255,255,.08);
+            border-color: rgba(196,154,62,.38);
+            transform: translateY(-3px);
+        }
+
+        .stat-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: .4rem;
+        }
+
+        .stat-lbl {
+            font-size: .78rem;
+            color: rgba(255,255,255,.5);
+            line-height: 1.45;
+        }
+
+        .hero-offices {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(196,154,62,.14);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .office-item h4 {
+            font-size: .68rem;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: .45rem;
+        }
+        .office-item p { font-size: .82rem; color: rgba(255,255,255,.55); line-height: 1.55; }
+
+        /* ─── SHARED SECTION ELEMENTS ────────────────────── */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold-muted);
+            margin-bottom: .9rem;
+        }
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 22px; height: 1.5px;
+            background: var(--gold);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.08;
+            margin-bottom: .9rem;
+        }
+        .section-title em { font-style: italic; color: var(--gold-muted); }
+
+        .section-desc {
+            font-size: 1rem;
+            color: var(--text-light);
+            max-width: 560px;
+            line-height: 1.78;
+        }
+
+        /* ─── SERVICES ───────────────────────────────────── */
+        .services {
+            padding: 7rem 2rem;
+            background: var(--off-white);
+        }
+
+        .services-header {
+            max-width: 1360px;
+            margin: 0 auto 3.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 2rem;
+        }
+
+        .services-grid {
+            max-width: 1360px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,.06);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all .35s cubic-bezier(.25,.46,.45,.94);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--navy));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .35s ease;
+        }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(13,27,42,.1); border-color: rgba(196,154,62,.22); }
+        .service-card:hover::after { transform: scaleX(1); }
+
+        .service-card.featured {
+            background: var(--navy);
+            border-color: transparent;
+            grid-row: span 2;
+        }
+        .service-card.featured .svc-icon-wrap { background: rgba(196,154,62,.18); }
+        .service-card.featured .svc-icon-wrap svg { color: var(--gold); }
+        .service-card.featured h3 { color: #fff; font-size: 1.4rem; }
+        .service-card.featured p { color: rgba(255,255,255,.55); }
+
+        .svc-icon-wrap {
+            width: 46px; height: 46px;
+            background: rgba(196,154,62,.09);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+        }
+        .svc-icon-wrap svg { width: 22px; height: 22px; color: var(--gold-muted); }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.22rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: .55rem;
+        }
+        .service-card p { font-size: .86rem; color: var(--text-light); line-height: 1.65; }
+
+        /* ─── PRICING ─────────────────────────────────────── */
+        .pricing {
+            padding: 7rem 2rem;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+        .pricing::before {
+            content: '';
+            position: absolute;
+            top: -180px; right: -180px;
+            width: 560px; height: 560px;
+            background: radial-gradient(circle, rgba(196,154,62,.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .pricing-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing .section-label { color: rgba(196,154,62,.7); }
+        .pricing .section-title { color: #fff; }
+        .pricing .section-desc { color: rgba(255,255,255,.45); }
+
+        .pricing-note {
+            display: inline-block;
+            background: rgba(196,154,62,.1);
+            border: 1px solid rgba(196,154,62,.22);
+            color: var(--gold);
+            padding: .38rem 1rem;
+            border-radius: 50px;
+            font-size: .76rem;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+
+        .pricing-hd { margin-bottom: 3.5rem; }
+
+        .pricing-dl-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            margin-top: 1.25rem;
+            background: transparent;
+            border: 1.5px solid rgba(196,154,62,.35);
+            color: rgba(255,255,255,.7);
+            padding: .5rem 1.2rem;
+            border-radius: 50px;
+            font-size: .8rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all .3s;
+        }
+        .pricing-dl-btn:hover { border-color: var(--gold); color: var(--gold); }
+        .pricing-dl-btn svg { width: 14px; height: 14px; }
+
+        .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+
+        .pricing-group {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(196,154,62,.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .pricing-group-hd {
+            background: rgba(196,154,62,.07);
+            border-bottom: 1px solid rgba(196,154,62,.1);
+            padding: .9rem 1.5rem;
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+        .pricing-group-hd + .pricing-group-hd { margin-top: .5rem; }
+
+        .pr-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .82rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,.04);
+            transition: background .2s;
+        }
+        .pr-row:last-child { border-bottom: none; }
+        .pr-row:hover { background: rgba(255,255,255,.03); }
+
+        .pr-name { font-size: .86rem; color: rgba(255,255,255,.72); font-weight: 400; }
+        .pr-price {
+            font-size: .86rem;
+            color: #fff;
+            font-weight: 600;
+            white-space: nowrap;
+            margin-left: 1rem;
+        }
+        .pr-price span { color: var(--gold); }
+
+        /* ─── ABOUT ───────────────────────────────────────── */
+        .about {
+            padding: 7rem 2rem;
+            background: var(--cream);
+        }
+
+        .about-inner { max-width: 1360px; margin: 0 auto; }
+
+        .about-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-bottom: 5.5rem;
+        }
+
+        .about-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            line-height: 1.08;
+        }
+        .about-text h2 em { font-style: italic; color: var(--gold-muted); }
+        .about-text p { font-size: 1rem; color: var(--text-mid); line-height: 1.82; margin-bottom: 1.25rem; }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: .9rem;
+            margin-top: 2rem;
+        }
+        .pillar {
+            background: var(--white);
+            padding: 1.35rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+        }
+        .pillar h4 { font-size: .84rem; font-weight: 700; color: var(--navy); margin-bottom: .35rem; letter-spacing: .2px; }
+        .pillar p { font-size: .8rem; color: var(--text-light); line-height: 1.55; }
+
+        .about-visual {
+            background: linear-gradient(140deg, var(--navy) 0%, #1C3050 100%);
+            border-radius: 20px;
+            padding: 2.8rem;
+            border: 1px solid rgba(196,154,62,.14);
+            position: relative;
+            overflow: hidden;
+        }
+        .about-visual::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(196,154,62,.1) 0%, transparent 70%);
+        }
+
+        .about-visual-pct {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            color: rgba(196,154,62,.13);
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+        .about-visual-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: .7rem;
+            line-height: 1.2;
+        }
+        .about-visual-title em { color: var(--gold); }
+        .about-visual-body { font-size: .875rem; color: rgba(255,255,255,.45); line-height: 1.75; }
+
+        .about-visual-locs {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(196,154,62,.14);
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .loc-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+        .loc-type { font-size: .72rem; color: rgba(255,255,255,.35); margin-top: .2rem; }
+        .loc-divider { width: 1px; height: 40px; background: rgba(196,154,62,.2); }
+
+        /* Team */
+        .team-hd {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .team-hd .section-label { justify-content: center; }
+        .team-hd .section-title { margin-bottom: 0; }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,.06);
+            transition: all .35s;
+        }
+        .team-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(13,27,42,.11); }
+
+        .team-card-top {
+            background: linear-gradient(140deg, var(--navy) 0%, #1C3050 100%);
+            padding: 2.3rem 2rem 1.5rem;
+        }
+
+        .team-avatar {
+            width: 76px; height: 76px;
+            border-radius: 50%;
+            background: rgba(196,154,62,.12);
+            border: 2.5px solid rgba(196,154,62,.38);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: .9rem;
+        }
+        .team-initials {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .team-card-top h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: .22rem;
+        }
+        .team-role {
+            font-size: .72rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .team-card-body { padding: 1.7rem 2rem; }
+        .team-card-body p { font-size: .88rem; color: var(--text-mid); line-height: 1.72; margin-bottom: 1.2rem; }
+
+        .team-tags { display: flex; flex-wrap: wrap; gap: .38rem; }
+        .team-tag {
+            background: rgba(196,154,62,.09);
+            color: var(--gold-muted);
+            font-size: .7rem;
+            font-weight: 600;
+            padding: .28rem .65rem;
+            border-radius: 50px;
+            border: 1px solid rgba(196,154,62,.18);
+            letter-spacing: .3px;
+        }
+
+        /* ─── CONTACT ─────────────────────────────────────── */
+        .contact {
+            padding: 7rem 2rem;
+            background: var(--navy-mid);
+            position: relative;
+        }
+
+        .contact-inner { max-width: 1360px; margin: 0 auto; }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 4.5rem;
+            align-items: start;
+        }
+
+        .contact-left .section-title { color: #fff; }
+        .contact-left .section-desc { color: rgba(255,255,255,.45); margin-bottom: 2.5rem; }
+        .contact-left .section-label { color: rgba(196,154,62,.65); }
+
+        .contact-blocks { display: flex; flex-direction: column; gap: 1.2rem; }
+
+        .contact-block {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(196,154,62,.1);
+            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            transition: all .25s;
+        }
+        .contact-block:hover { background: rgba(255,255,255,.07); border-color: rgba(196,154,62,.24); }
+
+        .cb-label {
+            font-size: .67rem;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: .55rem;
+        }
+
+        .contact-block p { font-size: .88rem; color: rgba(255,255,255,.72); line-height: 1.62; }
+        .contact-block a { color: rgba(255,255,255,.72); text-decoration: none; transition: color .2s; }
+        .contact-block a:hover { color: var(--gold); }
+
+        .phone-list { display: flex; flex-direction: column; gap: .32rem; }
+
+        .phone-row {
+            display: flex;
+            align-items: center;
+            gap: .55rem;
+            font-size: .88rem;
+            color: rgba(255,255,255,.72);
+        }
+        .phone-row a { color: rgba(255,255,255,.72); text-decoration: none; transition: color .2s; }
+        .phone-row a:hover { color: var(--gold); }
+
+        .badge {
+            font-size: .62rem;
+            font-weight: 700;
+            padding: .18rem .5rem;
+            border-radius: 50px;
+            letter-spacing: .4px;
+            text-transform: uppercase;
+            flex-shrink: 0;
+        }
+        .badge-wa  { background: rgba(37,211,102,.12); color: #25D366; border: 1px solid rgba(37,211,102,.22); }
+        .badge-tel { background: rgba(196,154,62,.12); color: var(--gold); border: 1px solid rgba(196,154,62,.22); }
+
+        /* Contact Form */
+        .contact-form-wrap {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(196,154,62,.14);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        .form-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1.8rem;
+        }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+        .form-group { margin-bottom: 1.2rem; }
+
+        .form-group label {
+            display: block;
+            font-size: .78rem;
+            font-weight: 600;
+            color: rgba(255,255,255,.55);
+            margin-bottom: .42rem;
+            letter-spacing: .3px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: .78rem 1rem;
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(196,154,62,.18);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: .9rem;
+            transition: all .25s;
+            outline: none;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder { color: rgba(255,255,255,.28); }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--gold);
+            background: rgba(255,255,255,.1);
+            box-shadow: 0 0 0 3px rgba(196,154,62,.09);
+        }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .form-group select { cursor: pointer; appearance: none; }
+        .form-group select option { background: var(--navy); color: #fff; }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            padding: 1rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: .95rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all .3s;
+            letter-spacing: .3px;
+            margin-top: .5rem;
+        }
+        .btn-submit:hover { background: var(--gold-bright); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,154,62,.32); }
+        .btn-submit:disabled { opacity: .7; cursor: not-allowed; transform: none; }
+
+        .form-status {
+            margin-top: 1rem;
+            padding: .875rem;
+            border-radius: 8px;
+            font-size: .86rem;
+            text-align: center;
+            display: none;
+        }
+        .form-status.success { display: block; background: rgba(52,211,153,.12); border: 1px solid rgba(52,211,153,.28); color: #6EE7B7; }
+        .form-status.error   { display: block; background: rgba(248,113,113,.12); border: 1px solid rgba(248,113,113,.28); color: #FCA5A5; }
+
+        /* ─── FOOTER ──────────────────────────────────────── */
+        footer {
+            background: var(--navy);
+            border-top: 1px solid rgba(196,154,62,.09);
+            padding: 2rem 2rem;
+        }
+        .footer-inner {
+            max-width: 1360px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .footer-copy { font-size: .8rem; color: rgba(255,255,255,.36); }
+        .footer-copy strong { color: rgba(255,255,255,.6); }
+
+        .footer-nav { display: flex; gap: 2rem; }
+        .footer-nav a { font-size: .8rem; color: rgba(255,255,255,.36); text-decoration: none; transition: color .2s; }
+        .footer-nav a:hover { color: var(--gold); }
+
+        /* ─── SCROLL ANIMATIONS ───────────────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .65s ease, transform .65s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .d1 { transition-delay: .1s; }
+        .d2 { transition-delay: .2s; }
+        .d3 { transition-delay: .3s; }
+        .d4 { transition-delay: .4s; }
+
+        /* ─── RESPONSIVE ──────────────────────────────────── */
+        @media (max-width: 1100px) {
+            .services-grid { grid-template-columns: repeat(3, 1fr); }
+            .service-card.featured { grid-row: span 1; grid-column: span 2; }
+        }
+
+        @media (max-width: 960px) {
+            .hero-inner { grid-template-columns: 1fr; }
+            .hero-right { display: none; }
+            .about-split { grid-template-columns: 1fr; gap: 3rem; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .services-header { flex-direction: column; align-items: flex-start; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: var(--navy);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2.5rem;
+                z-index: 1001;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links a { font-size: 1.2rem; }
+            .menu-toggle { display: block; }
+
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .service-card.featured { grid-column: span 2; }
+
+            .team-grid { grid-template-columns: 1fr; max-width: 420px; }
+            .form-row { grid-template-columns: 1fr; }
+            .hero-offices { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 520px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .service-card.featured { grid-column: span 1; }
+            .pillars { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════ -->
+<header id="site-header">
+    <nav>
+        <a href="#home" class="logo-link">
+            <img src="assets/logo.png" alt="ClearView Accounting Services" class="logo-img">
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            <svg id="iconMenu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section class="hero" id="home">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-eyebrow">Cape Town &amp; Rustenburg</div>
+            <h1>Financial Clarity.<br><em>Expert Care.</em></h1>
+            <p class="hero-desc">
+                ClearView Accounting Services delivers professional bookkeeping, tax compliance, company registration,
+                and financial management — empowering South African businesses to grow with confidence.
+            </p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary">Get a Free Consultation</a>
+                <a href="#services" class="btn-outline">Explore Services</a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-num">3+</div>
+                    <div class="stat-lbl">Years of Professional Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">18+</div>
+                    <div class="stat-lbl">Comprehensive Services Offered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">2</div>
+                    <div class="stat-lbl">Convenient Office Locations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">100%</div>
+                    <div class="stat-lbl">Dedicated to Your Success</div>
+                </div>
+            </div>
+            <div class="hero-offices">
+                <div class="office-item">
+                    <h4>Head Office</h4>
+                    <p>1 Ruskin Rd, Ruskin Villas<br>Parklands, Cape Town 7441</p>
+                </div>
+                <div class="office-item">
+                    <h4>Rustenburg Office</h4>
+                    <p>163 Joubert Street<br>Rustenburg 0300</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SERVICES ══════════════════════════════════════════ -->
+<section class="services" id="services">
+    <div class="services-header">
+        <div>
+            <div class="section-label">What We Offer</div>
+            <h2 class="section-title reveal">Comprehensive <em>Financial</em> Services</h2>
+            <p class="section-desc reveal d1">From company registration to full bookkeeping, SARS submissions to financial statements — every aspect of your business's financial needs, handled professionally.</p>
+        </div>
+        <a href="#pricing" class="btn-primary reveal" style="flex-shrink:0;">View Pricing</a>
+    </div>
+
+    <div class="services-grid">
+        <!-- Featured card (spans 2 rows) -->
+        <div class="service-card featured reveal">
+            <div class="svc-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    <line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/>
+                </svg>
+            </div>
+            <h3>Bookkeeping</h3>
+            <p>Complete financial record keeping — accurate, timely, and fully SARS-compliant. We manage your books month to month so you can focus on running your business. From R4,000/month.</p>
+        </div>
+
+        <div class="service-card reveal d1">
+            <div class="svc-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="2" y="7" width="20" height="14" rx="2"/>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+            </div>
+            <h3>Company Registration</h3>
+            <p>CIPC company formation, swiftly and correctly. R1,200.</p>
+        </div>
+
+        <div class="service-card reveal d2">
+            <div class="svc-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <line x1="12" y1="1" x2="12" y2="23"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+            </div>
+            <h3>Tax Returns</h3>
+            <p>ITR12 (individual) &amp; ITR14 (company) tax return preparation. From R600.</p>
+        </div>
+
+        <div class="service-card reveal d3">
+            <div class="svc-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85"/>
+                </svg>
+            </div>
+            <h3>SARS Submissions</h3>
+            <p>EMP201, EMP501, VAT201, IRP6 — all submissions handled accurately and on time.</p>
+        </div>
+
+        <div class="service-card reveal">
+            <div class="svc-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+            </div>
+            <h3>Financial Statements</h3>
+            <p>Professional preparation of accurate financial statements. From R2,500.</p>
+        </div>
+
+        <div class="service-card reveal d1">
+            <div class="svc-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+            </div>
+            <h3>BEE Certificates</h3>
+            <p>BBBEE verification &amp; certification to strengthen business opportunities. From R300.</p>
+        </div>
+
+        <div class="service-card reveal d2">
+            <div class="svc-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+            </div>
+            <h3>Company Amendments</h3>
+            <p>Director &amp; shareholder changes, company structure amendments. From R500.</p>
+        </div>
+
+        <div class="service-card reveal d3">
+            <div class="svc-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                    <line x1="1" y1="10" x2="23" y2="10"/>
+                </svg>
+            </div>
+            <h3>Tax Advisory</h3>
+            <p>Strategic tax planning to minimise liabilities and optimise your position. From R500.</p>
+        </div>
+
+        <div class="service-card reveal">
+            <div class="svc-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+            </div>
+            <h3>Payslips</h3>
+            <p>Accurate, professionally formatted employee payslips. Just R50 per payslip.</p>
+        </div>
+
+        <div class="service-card reveal d1">
+            <div class="svc-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+            </div>
+            <h3>CIDB Registration</h3>
+            <p>Construction Industry Development Board registration. Grade 1: R800, Grade 2–7: from R1,200.</p>
+        </div>
+
+        <div class="service-card reveal d2">
+            <div class="svc-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+            </div>
+            <h3>CSD Registration</h3>
+            <p>Central Supplier Database registration for government business. R500.</p>
+        </div>
+
+        <div class="service-card reveal d3">
+            <div class="svc-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+            </div>
+            <h3>SARS eFiling &amp; Ownership</h3>
+            <p>SARS eFiling registration (R500) and CIPC Beneficial Ownership filing (R800).</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ PRICING ════════════════════════════════════════════ -->
+<section class="pricing" id="pricing">
+    <div class="pricing-inner">
+        <div class="pricing-hd">
+            <div class="section-label">Transparent Rates</div>
+            <h2 class="section-title reveal">Our Service <em>Pricing</em></h2>
+            <p class="section-desc reveal d1">Clear, competitive rates with no hidden fees. All prices in South African Rand (ZAR).</p>
+            <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:1rem;">
+                <span class="pricing-note">Prices subject to change — contact us for a personalised quote</span>
+                <a href="/assets/price-list.pdf" download class="pricing-dl-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Download Price List PDF
+                </a>
+            </div>
+        </div>
+
+        <div class="pricing-grid reveal">
+            <!-- Column 1 -->
+            <div class="pricing-group">
+                <div class="pricing-group-hd">Company &amp; Registration Services</div>
+                <div class="pr-row"><span class="pr-name">Company Registration — CIPC</span><span class="pr-price"><span>R</span>1,200</span></div>
+                <div class="pr-row"><span class="pr-name">Company Amendments</span><span class="pr-price">From <span>R</span>500</span></div>
+                <div class="pr-row"><span class="pr-name">BEE Certificate</span><span class="pr-price">From <span>R</span>300</span></div>
+                <div class="pr-row"><span class="pr-name">SARS eFiling Registration</span><span class="pr-price"><span>R</span>500</span></div>
+                <div class="pr-row"><span class="pr-name">Beneficial Ownership — CIPC</span><span class="pr-price"><span>R</span>800</span></div>
+                <div class="pr-row"><span class="pr-name">CSD Registration</span><span class="pr-price"><span>R</span>500</span></div>
+                <div class="pr-row"><span class="pr-name">CIDB Grade 1</span><span class="pr-price"><span>R</span>800</span></div>
+                <div class="pr-row"><span class="pr-name">CIDB Grade 2–7</span><span class="pr-price">From <span>R</span>1,200</span></div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="pricing-group">
+                <div class="pricing-group-hd">SARS Returns</div>
+                <div class="pr-row"><span class="pr-name">EMP201 (Monthly PAYE)</span><span class="pr-price">From <span>R</span>1,200</span></div>
+                <div class="pr-row"><span class="pr-name">EMP501 (Reconciliation)</span><span class="pr-price">From <span>R</span>1,800</span></div>
+                <div class="pr-row"><span class="pr-name">ITR12 (Individual Tax Return)</span><span class="pr-price">From <span>R</span>600</span></div>
+                <div class="pr-row"><span class="pr-name">ITR14 (Company Tax Return)</span><span class="pr-price">From <span>R</span>600</span></div>
+                <div class="pr-row"><span class="pr-name">VAT201 Return</span><span class="pr-price">From <span>R</span>1,500</span></div>
+                <div class="pr-row"><span class="pr-name">Provisional Tax — IRP6</span><span class="pr-price">From <span>R</span>800</span></div>
+                <div class="pricing-group-hd">Advisory &amp; Ongoing Services</div>
+                <div class="pr-row"><span class="pr-name">Tax Advisory</span><span class="pr-price">From <span>R</span>500</span></div>
+                <div class="pr-row"><span class="pr-name">Financial Statements</span><span class="pr-price">From <span>R</span>2,500</span></div>
+                <div class="pr-row"><span class="pr-name">Bookkeeping (monthly)</span><span class="pr-price">From <span>R</span>4,000</span></div>
+                <div class="pr-row"><span class="pr-name">Payslips (per payslip)</span><span class="pr-price"><span>R</span>50</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ ABOUT ══════════════════════════════════════════════ -->
+<section class="about" id="about">
+    <div class="about-inner">
+
+        <!-- Story -->
+        <div class="about-split">
+            <div class="about-text reveal">
+                <div class="section-label">Our Story</div>
+                <h2>Built on <em>Trust</em> &amp; Expertise</h2>
+                <p>ClearView Accounting Services was founded with a simple vision: to provide businesses with the financial clarity they need to thrive. We believe every business deserves access to professional, reliable accounting services — regardless of size or stage.</p>
+                <p>Operating from our head office in Parklands, Cape Town, and our branch in Rustenburg, we serve clients across South Africa with personalised attention and deep expertise across all areas of accounting, taxation, and compliance.</p>
+                <div class="pillars">
+                    <div class="pillar">
+                        <h4>Expert Knowledge</h4>
+                        <p>Deep expertise across accounting, tax, and CIPC compliance</p>
+                    </div>
+                    <div class="pillar">
+                        <h4>Personal Attention</h4>
+                        <p>Every client receives dedicated, tailored service</p>
+                    </div>
+                    <div class="pillar">
+                        <h4>Full Compliance</h4>
+                        <p>Always current with SARS regulations and requirements</p>
+                    </div>
+                    <div class="pillar">
+                        <h4>Transparent Pricing</h4>
+                        <p>Clear, fair rates with no hidden fees or surprises</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal d2">
+                <div class="about-visual">
+                    <div class="about-visual-pct">%</div>
+                    <div class="about-visual-title">Numbers that<br><em>tell your story</em></div>
+                    <p class="about-visual-body">Your financial statements represent more than figures — they reflect the health, growth, and potential of your enterprise. We make sure those numbers are accurate, compliant, and clear.</p>
+                    <div class="about-visual-locs">
+                        <div>
+                            <div class="loc-name">Cape Town</div>
+                            <div class="loc-type">Head Office</div>
+                        </div>
+                        <div class="loc-divider"></div>
+                        <div>
+                            <div class="loc-name">Rustenburg</div>
+                            <div class="loc-type">Branch Office</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team -->
+        <div class="team-hd reveal">
+            <div class="section-label">Meet The Team</div>
+            <h2 class="section-title">The People Behind <em>ClearView</em></h2>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card reveal">
+                <div class="team-card-top">
+                    <div class="team-avatar">
+                        <span class="team-initials">PW</span>
+                    </div>
+                    <h3>Patricia Washe</h3>
+                    <div class="team-role">Senior Accounting Professional</div>
+                </div>
+                <div class="team-card-body">
+                    <p>Patricia brings over 3 years of dedicated experience in comprehensive accounting services. Her expertise spans the full accounting cycle, with particular depth in tax return preparation and financial reporting for both individuals and businesses.</p>
+                    <div class="team-tags">
+                        <span class="team-tag">Tax Returns</span>
+                        <span class="team-tag">Bookkeeping</span>
+                        <span class="team-tag">Financial Statements</span>
+                        <span class="team-tag">SARS Compliance</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-card reveal d2">
+                <div class="team-card-top">
+                    <div class="team-avatar">
+                        <span class="team-initials">AN</span>
+                    </div>
+                    <h3>Anathi Nzima</h3>
+                    <div class="team-role">Accounting &amp; Audit Specialist</div>
+                </div>
+                <div class="team-card-body">
+                    <p>Anathi has over 3 years of professional experience in accounting services, with strong specialisation in SARS tax returns, tax technical opinions and solutions, auditing, bookkeeping, financial statements, and a full range of accounting services. He ensures every client remains fully compliant while maximising their financial efficiency.</p>
+                    <div class="team-tags">
+                        <span class="team-tag">SARS Tax Returns</span>
+                        <span class="team-tag">Tax Technical Opinions</span>
+                        <span class="team-tag">Bookkeeping</span>
+                        <span class="team-tag">Financial Statements</span>
+                        <span class="team-tag">Auditing</span>
+                        <span class="team-tag">Taxation</span>
+                        <span class="team-tag">Company Registration</span>
+                        <span class="team-tag">CIPC Compliance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══ CONTACT ════════════════════════════════════════════ -->
+<section class="contact" id="contact">
+    <div class="contact-inner">
+        <div class="contact-grid">
+
+            <!-- Left: details -->
+            <div class="contact-left reveal">
+                <div class="section-label">Get In Touch</div>
+                <h2 class="section-title">Let's Discuss<br><em>Your Needs</em></h2>
+                <p class="section-desc">Reach us via WhatsApp, phone, or email — we're ready to help you with your accounting and financial needs.</p>
+
+                <div class="contact-blocks">
+                    <div class="contact-block">
+                        <div class="cb-label">Email</div>
+                        <p><a href="mailto:anathinzima46@gmail.com">anathinzima46@gmail.com</a></p>
+                    </div>
+
+                    <div class="contact-block">
+                        <div class="cb-label">Phone &amp; WhatsApp</div>
+                        <div class="phone-list">
+                            <div class="phone-row">
+                                <a href="https://wa.me/27634472076">063 447 2076</a>
+                                <span class="badge badge-wa">WhatsApp</span>
+                            </div>
+                            <div class="phone-row">
+                                <a href="https://wa.me/27635796020">063 579 6020</a>
+                                <span class="badge badge-wa">WhatsApp</span>
+                                <span class="badge badge-tel">Calls</span>
+                            </div>
+                            <div class="phone-row">
+                                <a href="tel:+27730661070">073 066 1070</a>
+                                <span class="badge badge-tel">Calls</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-block">
+                        <div class="cb-label">Head Office — Cape Town</div>
+                        <p>1 Ruskin Rd, Ruskin Villas<br>Parklands, Cape Town 7441</p>
+                    </div>
+
+                    <div class="contact-block">
+                        <div class="cb-label">Branch Office — Rustenburg</div>
+                        <p>163 Joubert Street<br>Rustenburg 0300</p>
+                    </div>
+
+                    <div class="contact-block">
+                        <div class="cb-label">Business Hours</div>
+                        <p>Monday – Friday: 8:00 AM – 5:00 PM<br>After hours available by appointment</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: form -->
+            <div class="contact-form-wrap reveal d2">
+                <h3 class="form-title">Send Us a Message</h3>
+                <form id="contactForm" name="contact" method="POST" action="https://api.web3forms.com/submit">
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                    <input type="hidden" name="subject" value="New Enquiry – ClearView Accounting Services">
+                    <input type="hidden" name="from_name" value="ClearView Website">
+                    <input type="checkbox" name="botcheck" style="display:none">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="first-name" placeholder="e.g. Sipho" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="last-name" placeholder="e.g. Dlamini" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g. 071 234 5678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Required</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service...</option>
+                            <option>Bookkeeping</option>
+                            <option>Company Registration (CIPC)</option>
+                            <option>Company Amendments</option>
+                            <option>SARS eFiling Registration</option>
+                            <option>Tax Returns — ITR12 / ITR14</option>
+                            <option>VAT Returns — VAT201</option>
+                            <option>PAYE — EMP201 / EMP501</option>
+                            <option>Provisional Tax — IRP6</option>
+                            <option>Tax Advisory</option>
+                            <option>Financial Statements</option>
+                            <option>BEE Certificate</option>
+                            <option>CIDB Registration</option>
+                            <option>CSD Registration</option>
+                            <option>Beneficial Ownership (CIPC)</option>
+                            <option>Payslips</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your requirements..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="submitBtn">Send Message</button>
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════ -->
+<footer>
+    <div class="footer-inner">
+        <p class="footer-copy">&copy; 2025 <strong>ClearView Accounting Services</strong>. All rights reserved. Cape Town | Rustenburg</p>
+        <nav class="footer-nav">
+            <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+    /* ── Mobile menu ── */
+    const toggle   = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const iconOpen  = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+    const iconClose = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+
+    toggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        toggle.innerHTML = open ? iconClose : iconOpen;
+        document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.innerHTML = iconOpen;
+        document.body.style.overflow = '';
+    }));
+
+    /* ── Header shrink on scroll ── */
+    const hdr = document.getElementById('site-header');
+    window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 80), { passive: true });
+
+    /* ── Scroll-reveal ── */
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* ── Contact form (Web3Forms) ── */
+    const form   = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    const btn    = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        status.className = 'form-status';
+
+        try {
+            const res = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(Object.fromEntries(new FormData(form)))
+            });
+            const data = await res.json();
+            if (data.success) {
+                status.className = 'form-status success';
+                status.textContent = 'Thank you! Your message has been sent. We will be in touch shortly.';
+                form.reset();
+            } else { throw new Error(data.message); }
+        } catch {
+            status.className = 'form-status error';
+            status.textContent = 'Something went wrong. Please call or WhatsApp us directly.';
+        }
+
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+    });
+</script>
+
+</body>
+</html>
